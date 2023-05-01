@@ -8,6 +8,6 @@
 
         public string? Description { get; set; }
 
-        public List<ProcessGroup> ProcessGroups { get; set; } = new();
+        public List<ProcessGroup> Groups { get; set; } = new();
     }
 }

@@ -70,7 +70,8 @@ namespace KhumbulaMultipleChoiceBuilder
                 {
                     var line = question.RawLines
                         .ElementAt(i)
-                        .Replace('\t', ' ');
+                        .Replace('\t', ' ')
+                        .Trim();
 
                     var trimRegex = new Regex("^([ABCD]?([0-9]*(\\.[0-9]*)*)?)\\s+");
                     line = trimRegex.Replace(line, "");
@@ -132,10 +133,10 @@ namespace KhumbulaMultipleChoiceBuilder
             tbxQuestionC.Text = _selectedQuestion?.Options.ElementAt(2).Label;
             tbxQuestionD.Text = _selectedQuestion?.Options.ElementAt(3).Label;
 
-            bool isA = _selectedQuestion?.Answer.Equals("A") ?? false;
-            bool isB = _selectedQuestion?.Answer.Equals("B") ?? false;
-            bool isC = _selectedQuestion?.Answer.Equals("C") ?? false;
-            bool isD = _selectedQuestion?.Answer.Equals("D") ?? false;
+            bool isA = _selectedQuestion?.Answer?.Equals("A") ?? false;
+            bool isB = _selectedQuestion?.Answer?.Equals("B") ?? false;
+            bool isC = _selectedQuestion?.Answer?.Equals("C") ?? false;
+            bool isD = _selectedQuestion?.Answer?.Equals("D") ?? false;
 
             gbxAnswerA.Text = "A" + (isA ? " (selected)" : "");
             gbxAnswerB.Text = "B" + (isB ? " (selected)" : "");
@@ -243,7 +244,7 @@ namespace KhumbulaMultipleChoiceBuilder
                 Title = "[[Group title]]",
                 Description = "[[Group description]]",
             };
-            process.ProcessGroups.Add(processGroup);
+            process.Groups.Add(processGroup);
 
             foreach (var question in _questions)
             {
