@@ -10,6 +10,8 @@
 
         public string? VisibilityExpression { get; set; }
 
+        public bool Required { get; set; }
+
         public string? RequiredExpression { get; set; }
 
         public Dictionary<string, object> Configuration { get; set; } = new();
