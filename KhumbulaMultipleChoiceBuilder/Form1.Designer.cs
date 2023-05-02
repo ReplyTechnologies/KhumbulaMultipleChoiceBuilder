@@ -32,6 +32,8 @@
             this.btnLoadQuestions = new System.Windows.Forms.Button();
             this.lblQuestionsPath = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tbxGroupName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSaveQuestion = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -93,6 +95,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.tbxGroupName);
+            this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.btnSaveQuestion);
             this.groupBox3.Controls.Add(this.btnExport);
             this.groupBox3.Location = new System.Drawing.Point(272, 12);
@@ -101,6 +105,22 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Options";
+            // 
+            // tbxGroupName
+            // 
+            this.tbxGroupName.Location = new System.Drawing.Point(230, 15);
+            this.tbxGroupName.Name = "tbxGroupName";
+            this.tbxGroupName.Size = new System.Drawing.Size(180, 23);
+            this.tbxGroupName.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(185, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Name:";
             // 
             // btnSaveQuestion
             // 
@@ -114,7 +134,7 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(100, 15);
+            this.btnExport.Location = new System.Drawing.Point(416, 15);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(88, 23);
             this.btnExport.TabIndex = 1;
@@ -291,10 +311,12 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Form1";
             this.Text = "Khumbula Multiple Choice Builder";
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.gbxAnswerA.ResumeLayout(false);
             this.gbxAnswerA.PerformLayout();
@@ -334,5 +356,7 @@
         private Button btnSetAnswerB;
         private Button btnSetAnswerC;
         private Button btnSetAnswerD;
+        private TextBox tbxGroupName;
+        private Label label1;
     }
 }

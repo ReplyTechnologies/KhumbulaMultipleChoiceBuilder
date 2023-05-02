@@ -222,6 +222,13 @@ namespace KhumbulaMultipleChoiceBuilder
 
         private void btnExport_Click(object sender, EventArgs e)
         {
+            var groupName = tbxGroupName.Text;
+            if (String.IsNullOrWhiteSpace(groupName)) 
+            {
+                tbxGroupName.Focus();
+                return;
+            }
+
             var sfd = new SaveFileDialog();
             sfd.Filter = "JSON Files | *.json";
             sfd.DefaultExt = "json";
@@ -235,14 +242,12 @@ namespace KhumbulaMultipleChoiceBuilder
             var process = new Process()
             {
                 Id = Guid.NewGuid().ToString(),
-                Title = "[[Process title]]",
-                Description = "[[Process description]]"
+                Title = groupName,
             };
 
             var processGroup = new ProcessGroup()
             {
-                Title = "[[Group title]]",
-                Description = "[[Group description]]",
+                Title = groupName,
             };
             process.Groups.Add(processGroup);
 
